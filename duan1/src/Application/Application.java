@@ -4,7 +4,9 @@
  */
 package Application;
 
-import View.Main;
+import main.Main;
+
+
 
 /**
  *
@@ -42,4 +44,5 @@ public class Application {
             }
         });
     }
-}
+    
+ }
