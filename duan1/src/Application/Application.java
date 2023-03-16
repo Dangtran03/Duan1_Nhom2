@@ -4,14 +4,10 @@
  */
 package Application;
 
-
-
-
-
 /**
  *
  * @author concu
  */
 public class Application {
-       
- }
+
+}

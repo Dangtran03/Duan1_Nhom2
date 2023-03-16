@@ -22,6 +22,30 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+    
+    // https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
+    implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '11.2.3.jre18'
+    
+    // https://mvnrepository.com/artifact/net.java.dev.timingframework/timingframework
+    implementation group: 'net.java.dev.timingframework', name: 'timingframework', version: '1.0'
+    
+    // https://mvnrepository.com/artifact/com.google.zxing/core
+    implementation group: 'com.google.zxing', name: 'core', version: '3.5.1'
+    
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.3'
+    
+    // https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture
+    implementation group: 'com.github.sarxos', name: 'webcam-capture', version: '0.3.12'
+    
+    // https://mvnrepository.com/artifact/com.miglayout/miglayout
+    implementation group: 'com.miglayout', name: 'miglayout', version: '3.7.4'
+    
+    // https://mvnrepository.com/artifact/com.miglayout/miglayout-core
+    implementation group: 'com.miglayout', name: 'miglayout-core', version: '11.0'
+    
+    // https://mvnrepository.com/artifact/com.miglayout/miglayout-swing
+    implementation group: 'com.miglayout', name: 'miglayout-swing', version: '11.0'
 }
 
 application {
