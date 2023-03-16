@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   mssql:
+    container_name: mssql
     image: mcr.microsoft.com/mssql/server
     restart: always
     environment:
@@ -9,3 +10,6 @@ services:
       MSSQL_SA_PASSWORD: root:ROOT
     ports:
       - 1433:1433
+
+  mssql_tools:
+    image: mcr.microsoft.com/mssql-tools
