@@ -47,9 +47,25 @@ public class ViewLogin extends javax.swing.JFrame {
                 if (isLogin) {
                     fractionCover = 1 - fraction;
                     fractionLogin = fraction;
+
+                    if (fraction >= 0.5f) {
+                        cover.registerRight(fractionCover );
+                    } else {
+                        cover.loginRight(fractionLogin );
+                    }
                 } else {
                     fractionCover = fraction;
                     fractionLogin = 1f - fraction;
+//
+                    if (fraction <= 0.5f) {
+                        cover.registerLeft(Double.valueOf(fraction ));
+                    } else {
+                        cover.loginLeft(Double.valueOf((1f - fraction)));
+
+                    }
+                }
+                if (fraction >= 0.5f) {
+                    loginAndRegister.showRegister(isLogin);
                 }
                 fractionCover = Double.valueOf(df.format(fractionCover));
                 fractionLogin = Double.valueOf(df.format(fractionLogin));
@@ -65,7 +81,7 @@ public class ViewLogin extends javax.swing.JFrame {
             }
 
         };
-        Animator animator = new Animator(1000, target);
+        Animator animator = new Animator(800, target);
         animator.setAcceleration(0.5f);
         animator.setDeceleration(0.5f);
 

@@ -1,55 +1,77 @@
 package View.login.component;
 
+import View.login.swing.ButtonOutLine;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.text.DecimalFormatSymbols;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.util.Locale;
+import javax.swing.JLabel;
+import net.miginfocom.swing.MigLayout;
 
 public class PanelCover extends javax.swing.JPanel {
+
+    private final DecimalFormat df = new DecimalFormat("##0.###", DecimalFormatSymbols.getInstance(Locale.US));
+    private MigLayout layout;
+    private JLabel title;
+    private JLabel description;
+    private ButtonOutLine button;
+    private boolean isLogin;
 
     private ActionListener event;
 
     public PanelCover() {
         initComponents();
+        setOpaque(false);
+        layout = new MigLayout("wrap, fill", "[center]", "push[]25[]10[]25[]push");
+        setLayout(layout);
+        init();
+    }
+
+    private void init() {
+        title = new JLabel("Welcome Back");
+        title.setFont(new Font("sansserif", 1, 30));
+        title.setForeground(new Color(245, 245, 245));
+        add(title);
+        description = new JLabel("Login with your personal information");
+        description.setForeground(new Color(245, 245, 245));
+        add(description);
+        button = new ButtonOutLine();
+        button.setBackground(new Color(255, 255, 255));
+        button.setForeground(new Color(255, 255, 255));
+        button.setText("Sign In");
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                event.actionPerformed(ae);
+
+            }
+        });
+        add(button, "w 60%, h 40");
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-
-        setBackground(new java.awt.Color(204, 0, 102));
-
-        jButton1.setText("Test");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        setBackground(new java.awt.Color(0, 204, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jButton1)
-                .addContainerGap(197, Short.MAX_VALUE))
+            .addGap(0, 404, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(164, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(111, 111, 111))
+            .addGap(0, 304, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        event.actionPerformed(evt);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -65,7 +87,47 @@ public class PanelCover extends javax.swing.JPanel {
         this.event = event;
     }
 
+    public void registerRight(Double v) {
+        v = Double.valueOf(df.format(v));
+        login(false);
+        layout.setComponentConstraints(title, "pad 0 -" + v + "% 0 0");
+        layout.setComponentConstraints(description, "pad 0 -" + v + "% 0 0");
+    }
+
+    public void registerLeft(Double v) {
+        v = Double.valueOf(df.format(v));
+        login(false);
+        layout.setComponentConstraints(title, "pad 0 -" + v + "% 0 0");
+        layout.setComponentConstraints(description, "pad 0 -" + v + "% 0 0");
+    }
+
+    public void loginLeft(Double v) {
+        v = Double.valueOf(df.format(v));
+        login(true);
+        layout.setComponentConstraints(title, "pad 0 " + v + "% 0 " + v + "%");
+         layout.setComponentConstraints(description, "pad 1 " + v + "% 0 " + v + "%");
+    }
+
+    public void loginRight(Double v) {
+        v = Double.valueOf(df.format(v));
+        login(true);
+        layout.setComponentConstraints(title, "pad 1 " + v + "% 0 " + v + "%");
+         layout.setComponentConstraints(description, "pad 1 " + v + "% 0 " + v + "%");
+    }
+     public void login(boolean login) {
+        if (this.isLogin != login) {
+            if (login) {
+                title.setText("Hello, Friend!");
+                description.setText("Enter your personal details");
+                button.setText("SIGN UP");
+            } else {
+                title.setText("Welcome Back!");
+                description.setText("To keep connected with us please");
+                button.setText("SIGN IN");
+            }
+            this.isLogin = login;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
