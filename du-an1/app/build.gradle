@@ -14,6 +14,7 @@ plugins {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+    flatDir("lib")
 }
 
 dependencies {
@@ -38,14 +39,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture
     implementation group: 'com.github.sarxos', name: 'webcam-capture', version: '0.3.12'
     
-    // https://mvnrepository.com/artifact/com.miglayout/miglayout
-    implementation group: 'com.miglayout', name: 'miglayout', version: '3.7.4'
-    
-    // https://mvnrepository.com/artifact/com.miglayout/miglayout-core
-    implementation group: 'com.miglayout', name: 'miglayout-core', version: '11.0'
-    
-    // https://mvnrepository.com/artifact/com.miglayout/miglayout-swing
-    implementation group: 'com.miglayout', name: 'miglayout-swing', version: '11.0'
+    // https://mvnrepository.com/artifact/net.miginfocom/miglayout
+    implementation group: 'net.miginfocom', name: 'miglayout', version: '4.0'
+
 }
 
 application {
