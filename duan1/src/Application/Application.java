@@ -5,6 +5,7 @@
 package Application;
 
 import View.ViewLogin;
+import View.register.TestRegister;
 
 /**
  *

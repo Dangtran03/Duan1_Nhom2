@@ -4,17 +4,115 @@
  */
 package View.register;
 
+import View.login.swing.MyPasswordField;
+import View.login.swing.MyTextField;
+import View.login.swing.Button;
+import View.login.swing.ButtonOutLine;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.plaf.basic.BasicBorders;
+import net.miginfocom.swing.MigLayout;
+
 /**
  *
  * @author thinhorigami
  */
 public class Register extends javax.swing.JPanel {
 
+    private MyTextField full_name,
+            email,
+            address,
+            cccd_number,
+            phone_number;
+    private MyPasswordField password, confirm_password;
+    private JRadioButton male, female;
+    private ButtonGroup gender;
+    private MigLayout layout;
+    private JButton register_button;
     /**
      * Creates new form Register
      */
     public Register() {
         initComponents();
+        init();
+        this.setBackground(Color.WHITE);
+    }
+    
+    public Register(int _width, int _height) {
+        this();
+        this.setSize(_width, _height);
+    }
+    
+    public Register(Dimension _d) {
+        this(_d.width, _d.height);
+    }
+    
+    public void init() {
+        this.setLayout(new MigLayout("wrap", "push[center]push"));
+        
+        JLabel label = new JLabel("Sign Up");
+        label.setFont(new Font("sansserif", 1, 30));
+        label.setForeground(new Color(7, 164, 121));
+        this.add(label, "W 60%");
+        
+        full_name = new MyTextField();
+        full_name.setPrefixIcon(new ImageIcon(this.getClass().getResource("/icon/Unknown_person.png")));
+        full_name.setHint("nhập họ tên");
+        this.add(full_name, "W 60%");
+        
+        email = new MyTextField();
+        email.setPrefixIcon(new ImageIcon(this.getClass().getResource("/icon/Mail.png")));
+        email.setHint("nhập email");
+        this.add(email, "W 60%");
+        
+        male = new JRadioButton("nam");
+        female = new JRadioButton("nữ");
+        gender = new ButtonGroup();
+        gender.add(male);
+        gender.add(female);
+        this.add(male, "al left, split2");
+        this.add(female, "");
+        
+        address = new MyTextField();
+        address.setPrefixIcon(new ImageIcon(this.getClass().getResource("/icon/Home.png")));
+        address.setHint("nhập địa chỉ");
+        this.add(address, "W 60%");
+        
+        cccd_number = new MyTextField();
+        cccd_number.setPrefixIcon(new ImageIcon(this.getClass().getResource("/icon/User.png")));
+        cccd_number.setHint("nhập số CMNN/CCCD");
+        this.add(cccd_number, "W 60%");
+        
+        phone_number = new MyTextField();
+        phone_number.setPrefixIcon(new ImageIcon(this.getClass().getResource("/icon/Call.png")));
+        phone_number.setHint("nhập số điện thoại");
+        this.add(phone_number, "W 60%");
+        
+        password = new MyPasswordField();
+        password.setPrefixIcon(new ImageIcon(this.getClass().getResource("/icon/Lock.png")));
+        password.setHint("nhập mật khẩu");
+        this.add(password, "W 60%");
+        
+        confirm_password = new MyPasswordField();
+        confirm_password.setPrefixIcon(new ImageIcon(this.getClass().getResource("/icon/Lock.png")));
+        confirm_password.setHint("nhập lại mật khẩu");
+        
+        this.add(confirm_password, "W 60%");
+        register_button = new Button();
+        register_button.setBackground(new Color(7, 164, 121));
+        register_button.setForeground(new Color(250, 250, 250));
+        register_button.setText("Sign Up");
+        this.add(register_button, "W 60%, h 40");
+        
+        this.setVisible(true);
     }
 
     /**
