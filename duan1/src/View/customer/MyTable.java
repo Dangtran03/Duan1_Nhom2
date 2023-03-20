@@ -4,20 +4,13 @@
  */
 package View.customer;
 
-import Utilities.annotations.table.Table;
-import Utilities.annotations.table.TableHeader;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
-import net.miginfocom.swing.MigLayout;
+import Utilities.annotations.table.SwingTable;
+import Utilities.annotations.table.SwingTableHeader;
 
 /**
  *
@@ -32,14 +25,14 @@ public class MyTable<TData, TControl extends JPanel> extends JTable {
     public void init(Class<TData> _data, Class<TControl> _control) throws Exception {
         
         // TData contraint @Table
-        if (!_data.isAnnotationPresent(Table.class)) {
+        if (!_data.isAnnotationPresent(SwingTable.class)) {
             throw new Exception(
-                    _data.getName() + " mot has " + Table.class.getName());
+                    _data.getName() + " mot has " + SwingTable.class.getName());
         }
         
         List<String> fields = Arrays.stream(_data.getDeclaredFields())
-                .filter((arg) -> (arg.isAnnotationPresent(TableHeader.class)))
-                .map((arg) -> (arg.getAnnotation(TableHeader.class).name()))
+                .filter((arg) -> (arg.isAnnotationPresent(SwingTableHeader.class)))
+                .map((arg) -> (arg.getAnnotation(SwingTableHeader.class).name()))
                 .toList();
         
         // @TableHeader.name() is header of column

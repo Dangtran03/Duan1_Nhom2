@@ -1,8 +1,8 @@
 package model;
 
-import Utilities.annotations.table.Table;
-import Utilities.annotations.table.TableHeader;
 import java.util.Date;
+import Utilities.annotations.table.SwingTable;
+import Utilities.annotations.table.SwingTableHeader;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,15 +14,15 @@ import java.util.Date;
  * @author thinhorigami
  */
 
-@Table
+@SwingTable
 public class Customer {
     
-    @TableHeader(name = "ten")
+    @SwingTableHeader(name = "ten")
     private String name;
     
-    @TableHeader(name =  "ngay sinh")
+    @SwingTableHeader(name =  "ngay sinh")
     private Date birth;
     
-    @TableHeader(name = "email")
+    @SwingTableHeader(name = "email")
     private String email;
 }

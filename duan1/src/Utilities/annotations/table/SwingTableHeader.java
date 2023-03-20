@@ -15,6 +15,6 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TableHeader {
+public @interface SwingTableHeader {
     public String name();
 }
