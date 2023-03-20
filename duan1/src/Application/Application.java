@@ -6,13 +6,13 @@ package Application;
 
 import View.ViewLogin;
 import View.register.TestRegister;
-
+import View.customer.TestCustomer;
 /**
  *
  * @author concu
  */
 public class Application {
     public static void main(String[] args) {
-        new ViewLogin().setVisible(true);
+        new TestCustomer().setVisible(true);
     }
 }
