@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Utilities.annotations.table.SwingTable;
 import Utilities.annotations.table.SwingTableHeader;
+import java.awt.Color;
 
 /**
  *
@@ -37,6 +38,8 @@ public class MyTable<TData, TControl extends JPanel> extends JTable {
         
         // @TableHeader.name() is header of column
         DefaultTableModel model = (DefaultTableModel)this.getModel();
+        this.getTableHeader().setBackground(Color.decode("#95BDFF"));
+        model.setRowCount(4);;
         for (String name: fields) model.addColumn(name);
         System.out.println(model.getColumnCount());
     }

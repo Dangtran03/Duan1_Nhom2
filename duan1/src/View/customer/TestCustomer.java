@@ -28,7 +28,7 @@ public class TestCustomer extends javax.swing.JFrame {
         this.setLayout(new MigLayout("wrap"));
         this.customer = new model.Customer();
         try {
-            this.table = new JScrollPane(new MyTable<model.Customer, JPanel>(model.Customer.class, JPanel.class));
+            this.table = new JScrollPane(new MyTable<model.Customer, CustomerTableControl>(model.Customer.class, CustomerTableControl.class));
             this.table.setVisible(true);
             this.add(this.table, "W 100%, H 500");
         } catch (Exception ex) {
@@ -51,11 +51,11 @@ public class TestCustomer extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 637, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 471, Short.MAX_VALUE)
         );
 
         pack();
