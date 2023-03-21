@@ -17,6 +17,10 @@ import Utilities.annotations.table.SwingTableHeader;
 @SwingTable
 public class Customer {
     
+    private Long id;
+    
+    private String id_customer;
+    
     @SwingTableHeader(name = "ten")
     private String name;
     
@@ -25,4 +29,31 @@ public class Customer {
     
     @SwingTableHeader(name = "email")
     private String email;
+    
+    @SwingTableHeader(name = "so dien thoai")
+    private String phone_number;
+    
+    @SwingTableHeader(name = "dia chi")
+    private String address;
+    
+    @SwingTableHeader(name = "gioi tinh")
+    private Boolean gender;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

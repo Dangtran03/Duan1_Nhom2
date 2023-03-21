@@ -7,11 +7,13 @@ package Application;
 import View.ViewLogin;
 import View.register.TestRegister;
 import View.customer.TestCustomer;
+import View.register.Register;
 /**
  *
  * @author concu
  */
 public class Application {
     public static void main(String[] args) {
+        new TestCustomer().setVisible(true);
     }
 }

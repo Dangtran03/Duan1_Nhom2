@@ -30,7 +30,7 @@ public class TestCustomer extends javax.swing.JFrame {
         try {
             this.table = new JScrollPane(new MyTable<model.Customer, JPanel>(model.Customer.class, JPanel.class));
             this.table.setVisible(true);
-            this.add(this.table, "W 50%, H 500");
+            this.add(this.table, "W 100%, H 500");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
