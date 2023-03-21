@@ -39,23 +39,4 @@ public class Customer {
     @SwingTableHeader(name = "gioi tinh")
     private Boolean gender;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

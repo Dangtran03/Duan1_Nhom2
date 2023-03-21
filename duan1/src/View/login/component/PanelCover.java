@@ -56,7 +56,8 @@ public class PanelCover extends javax.swing.JPanel {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         setBackground(new java.awt.Color(0, 204, 51));
@@ -64,13 +65,11 @@ public class PanelCover extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 404, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 304, Short.MAX_VALUE));
     }// </editor-fold>//GEN-END:initComponents
 
     @Override
@@ -105,25 +104,26 @@ public class PanelCover extends javax.swing.JPanel {
         v = Double.valueOf(df.format(v));
         login(true);
         layout.setComponentConstraints(title, "pad 0 " + v + "% 0 " + v + "%");
-         layout.setComponentConstraints(description, "pad 1 " + v + "% 0 " + v + "%");
+        layout.setComponentConstraints(description, "pad 1 " + v + "% 0 " + v + "%");
     }
 
     public void loginRight(Double v) {
         v = Double.valueOf(df.format(v));
         login(true);
         layout.setComponentConstraints(title, "pad 1 " + v + "% 0 " + v + "%");
-         layout.setComponentConstraints(description, "pad 1 " + v + "% 0 " + v + "%");
+        layout.setComponentConstraints(description, "pad 1 " + v + "% 0 " + v + "%");
     }
-     public void login(boolean login) {
+
+    public void login(boolean login) {
         if (this.isLogin != login) {
             if (login) {
                 title.setText("Hello, Friend!");
                 description.setText("Enter your personal details");
-                button.setText("SIGN UP");
+                button.setText("Forgot Password");
             } else {
                 title.setText("Welcome Back!");
                 description.setText("To keep connected with us please");
-                button.setText("SIGN IN");
+                button.setText("Sign In");
             }
             this.isLogin = login;
         }

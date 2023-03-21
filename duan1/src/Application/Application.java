@@ -5,6 +5,7 @@
 package Application;
 
 import View.ViewLogin;
+import View.ViewTrangChu;
 import View.register.TestRegister;
 import View.customer.TestCustomer;
 import View.register.Register;
@@ -14,6 +15,6 @@ import View.register.Register;
  */
 public class Application {
     public static void main(String[] args) {
-        new TestCustomer().setVisible(true);
+        new ViewTrangChu().setVisible(true);
     }
 }
